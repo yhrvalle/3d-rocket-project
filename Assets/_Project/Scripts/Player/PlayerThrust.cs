@@ -19,8 +19,17 @@ public class PlayerThrust : MonoBehaviour
         thrustReader.EnablePlayerInputActions();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        Debug.Log($"Thrust Input: {thrustInput}");
+        ThrustBehaviour();
+    }
+
+    private void ThrustBehaviour()
+    {
+        if (thrustInput)
+        {
+            Vector3 finalThrust = playerConfig.ThrustForce * Time.fixedDeltaTime * Vector3.up;
+            rb.AddRelativeForce(finalThrust);
+        }
     }
 }
