@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a35839308e1467916bb367f258cd7f99, type: 3}
   m_Name: PlayerConfiguration
   m_EditorClassIdentifier: Assembly-CSharp::PlayerConfiguration
-  thrustForce: 10
+  thrustForce: 1250
