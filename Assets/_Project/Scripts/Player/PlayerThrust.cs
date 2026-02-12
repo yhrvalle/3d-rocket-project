@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerThrust : MonoBehaviour
 {
     [SerializeField] private PlayerInputReader thrustReader;
+    [SerializeField] private PlayerConfiguration playerConfig;
     private bool thrustInput;
-
     private Rigidbody rb;
     private void Awake()
     {
