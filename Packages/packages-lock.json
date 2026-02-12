@@ -55,7 +55,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.26",
+      "version": "2.0.27",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -192,6 +192,15 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.yhr.personalpackage": {
+      "version": "https://github.com/yhrvalle/unity-personal-package.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.inputsystem": "1.7.0"
+      },
+      "hash": "53cc5a7bf9472b407eae38fd9fef0e68dea92086"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
