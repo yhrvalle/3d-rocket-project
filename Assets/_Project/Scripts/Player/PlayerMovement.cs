@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
         inputReader.Move += direction => this.moveInput = direction;
         inputReader.EnablePlayerInputActions();
     }
-    private void Update()
+    void Update()
     {
         Debug.Log($"Move Input: {moveInput}");
     }
