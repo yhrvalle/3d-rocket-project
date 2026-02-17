@@ -3,15 +3,20 @@ using PersonalPackage.Input;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerInputReader inputReader;
-    private Vector3 moveInput;
+    [SerializeField] private PlayerConfiguration playerConfig;
+    private Vector3 rotationInput;
 
     private void Start()
     {
-        inputReader.Move += direction => this.moveInput = direction;
+        inputReader.Move += direction => this.rotationInput = direction;
         inputReader.EnablePlayerInputActions();
     }
-    void Update()
+    private void FixedUpdate()
     {
-        Debug.Log($"Move Input: {moveInput}");
+        RotationBehaviour();
+    }
+    private void RotationBehaviour()
+    {
+        transform.Rotate(-1 * playerConfig.RotationSpeed * rotationInput.x * Time.fixedDeltaTime * Vector3.forward);
     }
 }

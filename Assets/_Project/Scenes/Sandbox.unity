@@ -656,30 +656,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1104322400408522513, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1149579066957164790}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
---- !u!1 &1149579066957164789 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1104322400408522513, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
-  m_PrefabInstance: {fileID: 1149579066957164788}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1149579066957164790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149579066957164789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 798093d31ef8d6ac99e3474296eaca7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerThrust
-  thrustReader: {fileID: 11400000, guid: 2334a8067e56208438bfaaa46e0f69c7, type: 2}
-  playerConfig: {fileID: 11400000, guid: 7aaa0ed456908f3c58945cddd82d614a, type: 2}
 --- !u!1001 &1278825614488172961
 PrefabInstance:
   m_ObjectHideFlags: 0

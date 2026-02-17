@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PlayerConfiguration
   m_EditorClassIdentifier: Assembly-CSharp::PlayerConfiguration
   thrustForce: 1250
+  rotationSpeed: 300
