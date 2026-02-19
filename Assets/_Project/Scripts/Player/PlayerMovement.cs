@@ -19,8 +19,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void RotationBehaviour()
     {
-        
         transform.Rotate(-1 * playerConfig.RotationSpeed * rotationInput.x * Time.fixedDeltaTime * Vector3.forward);
-        
     }
 }
