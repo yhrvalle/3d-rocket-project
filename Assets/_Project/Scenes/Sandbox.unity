@@ -745,11 +745,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1328915461 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1104322400408522513, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
-  m_PrefabInstance: {fileID: 1149579066957164788}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &76315623872339581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -819,14 +814,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerShip
       objectReference: {fileID: 0}
-    - target: {fileID: 3754029769597047619, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
-      propertyPath: m_Volume
-      value: 0.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 5333841954052055320, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
-      propertyPath: m_LinearDamping
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7422216447629389260, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.45
@@ -870,28 +857,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1104322400408522513, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
-      insertIndex: 5
-      addedObject: {fileID: 1149579066957164800}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
 --- !u!4 &1149579066957164794 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7422216447629389260, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
   m_PrefabInstance: {fileID: 1149579066957164788}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1149579066957164800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328915461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d57b50bf519bc4e6830acdc0db7ce79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerCollisionHandler
 --- !u!1001 &1278825614488172961
 PrefabInstance:
   m_ObjectHideFlags: 0
