@@ -7,20 +7,17 @@ public class PlayerThrust : MonoBehaviour
 {
     [SerializeField] private PlayerInputReader thrustReader;
     [SerializeField] private PlayerConfiguration playerConfig;
+    [SerializeField] private AudioClip thrustAudioClip;
     private bool thrustInput;
     private Rigidbody rb;
     private AudioSource audioSource;
-    
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
-    }
 
     private void Start()
     {
         thrustReader.Jump += isThrusting => this.thrustInput = isThrusting;
         thrustReader.EnablePlayerInputActions();
+        rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -36,7 +33,7 @@ public class PlayerThrust : MonoBehaviour
             rb.AddRelativeForce(finalThrust);
             if (!audioSource.isPlaying)
             {
-                audioSource.Play();
+                audioSource.PlayOneShot(thrustAudioClip);
             }
         }
         else
