@@ -1,5 +1,6 @@
 using UnityEngine;
 using PersonalPackage.Input;
+
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerInputReader inputReader;
@@ -10,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     {
         inputReader.Move += direction => this.rotationInput = direction;
         inputReader.EnablePlayerInputActions();
+        
     }
     private void FixedUpdate()
     {
@@ -17,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private void RotationBehaviour()
     {
+        
         transform.Rotate(-1 * playerConfig.RotationSpeed * rotationInput.x * Time.fixedDeltaTime * Vector3.forward);
+        
     }
 }
