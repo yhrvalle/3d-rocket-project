@@ -7,7 +7,7 @@ public class PlayerThrust : MonoBehaviour
 {
     [SerializeField] private PlayerInputReader thrustReader;
     [SerializeField] private PlayerConfiguration playerConfig;
-    [SerializeField] private AudioClip thrustAudioClip;
+    
     private bool thrustInput;
     private Rigidbody rb;
     private AudioSource audioSource;
@@ -33,7 +33,7 @@ public class PlayerThrust : MonoBehaviour
             rb.AddRelativeForce(finalThrust);
             if (!audioSource.isPlaying)
             {
-                audioSource.PlayOneShot(thrustAudioClip);
+                audioSource.PlayOneShot(playerConfig.ThrustSfx);
             }
         }
         else
