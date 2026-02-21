@@ -7,7 +7,8 @@ public class PlayerThrust : MonoBehaviour
 {
     [SerializeField] private PlayerInputReader thrustReader;
     [SerializeField] private PlayerConfiguration playerConfig;
-    [SerializeField] private ParticleSystem[] thrustParticles;
+    [SerializeField] private ParticleSystem mainThrust;
+
     private AudioSource audioSource;
     private Rigidbody rb;
 
@@ -16,16 +17,13 @@ public class PlayerThrust : MonoBehaviour
 
     private void Start()
     {
-        thrustReader.Jump += OnThrustChanged;
         thrustReader.EnablePlayerInputActions();
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
-        foreach (ParticleSystem ps in thrustParticles)
-        {
-            ParticleSystem.EmissionModule emission = ps.emission;
-            emission.enabled = false;
-            ps.Play();
-        }
+
+        ParticleSystem.EmissionModule emission = mainThrust.emission;
+        emission.enabled = false;
+        mainThrust.Play();
     }
 
     private void FixedUpdate()
@@ -33,10 +31,20 @@ public class PlayerThrust : MonoBehaviour
         ThrustBehaviour();
     }
 
+    private void OnEnable()
+    {
+        thrustReader.Jump += OnThrustChanged;
+    }
+
+    private void OnDisable()
+    {
+        if (thrustReader) thrustReader.Jump -= OnThrustChanged;
+    }
+
     private void OnThrustChanged(bool isThrusting)
     {
         thrustInput = isThrusting;
-        ThrustParticlesBehaviour(isThrusting);
+        MainThrustParticlesBehaviour(isThrusting);
         ThrustAudioBehaviour(isThrusting);
     }
 
@@ -47,20 +55,20 @@ public class PlayerThrust : MonoBehaviour
         rb.AddRelativeForce(finalThrust);
     }
 
-    private void ThrustParticlesBehaviour(bool isThrusting)
+    private void MainThrustParticlesBehaviour(bool isThrusting)
     {
-        foreach (ParticleSystem thrustParticle in thrustParticles)
-        {
-            ParticleSystem.EmissionModule emission = thrustParticle.emission;
-            emission.enabled = isThrusting;
-        }
+        ParticleSystem.EmissionModule emission = mainThrust.emission;
+        emission.enabled = isThrusting;
     }
 
     private void ThrustAudioBehaviour(bool isActive)
     {
         if (isActive)
         {
-            if (!audioSource.isPlaying) audioSource.PlayOneShot(playerConfig.ThrustSfx);
+            if (audioSource.isPlaying) return;
+            audioSource.clip = playerConfig.ThrustSfx;
+            audioSource.loop = true;
+            audioSource.Play();
         }
         else
         {

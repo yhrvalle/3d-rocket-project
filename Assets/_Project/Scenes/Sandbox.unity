@@ -814,18 +814,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerShip
       objectReference: {fileID: 0}
-    - target: {fileID: 3708804473355207057, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
-      propertyPath: playOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283634977436238115, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
-      propertyPath: playOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5427223609079435699, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
-      propertyPath: playOnAwake
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7422216447629389260, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.45
