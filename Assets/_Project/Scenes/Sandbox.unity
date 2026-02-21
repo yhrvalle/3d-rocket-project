@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!198 &81770149 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 55134150423525944, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
-  m_PrefabInstance: {fileID: 1149579066957164788}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &158079729
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,11 +745,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &1210266376 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 955602697515089598, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
-  m_PrefabInstance: {fileID: 1149579066957164788}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &76315623872339581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -824,14 +814,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerShip
       objectReference: {fileID: 0}
-    - target: {fileID: 4968294125646694436, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
-      propertyPath: crashParticles
-      value: 
-      objectReference: {fileID: 81770149}
-    - target: {fileID: 4968294125646694436, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
-      propertyPath: successParticles
-      value: 
-      objectReference: {fileID: 1210266376}
+    - target: {fileID: 3708804473355207057, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283634977436238115, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427223609079435699, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7422216447629389260, guid: 9fda3c95cc343ae08870317e2ed3b2f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.45

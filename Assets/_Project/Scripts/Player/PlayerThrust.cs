@@ -7,17 +7,25 @@ public class PlayerThrust : MonoBehaviour
 {
     [SerializeField] private PlayerInputReader thrustReader;
     [SerializeField] private PlayerConfiguration playerConfig;
-    
-    private bool thrustInput;
-    private Rigidbody rb;
+    [SerializeField] private ParticleSystem[] thrustParticles;
     private AudioSource audioSource;
+    private Rigidbody rb;
+
+
+    private bool thrustInput;
 
     private void Start()
     {
-        thrustReader.Jump += isThrusting => this.thrustInput = isThrusting;
+        thrustReader.Jump += OnThrustChanged;
         thrustReader.EnablePlayerInputActions();
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        foreach (ParticleSystem ps in thrustParticles)
+        {
+            ParticleSystem.EmissionModule emission = ps.emission;
+            emission.enabled = false;
+            ps.Play();
+        }
     }
 
     private void FixedUpdate()
@@ -25,16 +33,34 @@ public class PlayerThrust : MonoBehaviour
         ThrustBehaviour();
     }
 
+    private void OnThrustChanged(bool isThrusting)
+    {
+        thrustInput = isThrusting;
+        ThrustParticlesBehaviour(isThrusting);
+        ThrustAudioBehaviour(isThrusting);
+    }
+
     private void ThrustBehaviour()
     {
-        if (thrustInput)
+        if (!thrustInput) return;
+        Vector3 finalThrust = playerConfig.ThrustForce * Time.fixedDeltaTime * Vector3.up;
+        rb.AddRelativeForce(finalThrust);
+    }
+
+    private void ThrustParticlesBehaviour(bool isThrusting)
+    {
+        foreach (ParticleSystem thrustParticle in thrustParticles)
         {
-            Vector3 finalThrust = playerConfig.ThrustForce * Time.fixedDeltaTime * Vector3.up;
-            rb.AddRelativeForce(finalThrust);
-            if (!audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(playerConfig.ThrustSfx);
-            }
+            ParticleSystem.EmissionModule emission = thrustParticle.emission;
+            emission.enabled = isThrusting;
+        }
+    }
+
+    private void ThrustAudioBehaviour(bool isActive)
+    {
+        if (isActive)
+        {
+            if (!audioSource.isPlaying) audioSource.PlayOneShot(playerConfig.ThrustSfx);
         }
         else
         {
