@@ -27,14 +27,11 @@ public class PlayerCollisionHandler : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Friendly":
-                Debug.Log("This thing is friendly");
                 break;
             case "Finish":
-                Debug.Log("You win!");
                 StartCoroutine(WinningSequence());
                 break;
             default:
-                Debug.Log("You lose!");
                 StartCoroutine(CrashSequence());
                 break;
         }

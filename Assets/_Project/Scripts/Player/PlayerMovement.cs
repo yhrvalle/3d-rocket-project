@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         ThrustParticlesBehaviour();
     }
 
+    // Need to find a way without needing this + Play on Awake to make those particles work
     private static void InitializeThruster(ParticleSystem particles)
     {
         if (!particles) return;
@@ -49,8 +50,7 @@ public class PlayerMovement : MonoBehaviour
         emission.enabled = false;
         particles.Play();
     }
-
-
+    
     private void RotationBehaviour()
     {
         transform.Rotate(-1 * playerConfig.RotationSpeed * rotationInput.x * Time.fixedDeltaTime * Vector3.forward);
@@ -58,7 +58,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void ThrustParticlesBehaviour()
     {
-        ParticleSystem.EmissionModule leftEmission = leftThrustParticles.emission;
+        ParticleSystem.EmissionModule
+            leftEmission = leftThrustParticles.emission; // Probably cache this in Awake/Start method 
         ParticleSystem.EmissionModule rightEmission = rightThrustParticles.emission;
 
         leftEmission.enabled = rotationInput.x > 0;

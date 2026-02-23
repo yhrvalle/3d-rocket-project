@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a35839308e1467916bb367f258cd7f99, type: 3}
   m_Name: PlayerConfiguration
   m_EditorClassIdentifier: Assembly-CSharp::PlayerConfiguration
-  thrustForce: 1250
-  rotationSpeed: 60
+  thrustForce: 1500
+  rotationSpeed: 150
   crashSfx: {fileID: 8300000, guid: 945894e667e658433849bda39097326c, type: 3}
   successSfx: {fileID: 8300000, guid: 30b4cc234ae88369dbbaf1b039e69adf, type: 3}
   thrustSfx: {fileID: 8300000, guid: 94fc264ed6bfb8bf395101d19ccc620c, type: 3}
-  crashParticles: {fileID: 0}
-  successParticles: {fileID: 0}
