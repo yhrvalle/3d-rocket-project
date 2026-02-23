@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5740413070459040290, guid: 37669ce6da9ccda459c3df756f29809f, type: 3}
       propertyPath: m_Name
-      value: Finish Pad Variant
+      value: Finish Pad
       objectReference: {fileID: 0}
     - target: {fileID: 5740413070459040290, guid: 37669ce6da9ccda459c3df756f29809f, type: 3}
       propertyPath: m_TagString
